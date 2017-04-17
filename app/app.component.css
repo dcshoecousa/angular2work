@@ -1,0 +1,33 @@
+.container-nav{
+  width: 240px;
+  height: 100%;
+  float: left;
+  position: fixed;
+  -webkit-transition: 0.5s linear;
+  -moz-transition: 0.5s linear;
+  -ms-transition: 0.5s linear;
+  -o-transition: 0.5s linear;
+  transition: 0.5s linear;
+}
+.container-main{
+  float: right;
+  height: 100%;
+  position: absolute;
+  left: 240px;
+  right: 0;
+  -webkit-transition:  0.5s linear;
+  -moz-transition:  0.5s linear;
+  -ms-transition:  0.5s linear;
+  -o-transition:  0.5s linear;
+  transition:  0.5s linear;
+  background: #f4f4f4;
+}
+@media (max-width: 768px) {
+  .container-nav{
+    transform: translateX(-250px);
+    z-index: 1001;
+  }
+  .container-main{
+    left: 0;
+  }
+}
