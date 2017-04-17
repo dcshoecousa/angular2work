@@ -1,0 +1,15 @@
+<div class="auth-card">
+  <div class="auth-main">
+    <img src="../../assets/avatar.jpg" alt="" class="img-circle">
+    <form (ngSubmit)="onSubmit(resetForm.value)" #resetForm="ngForm">
+      <div class="input-box">
+        <label for="email">邮箱</label>
+        <input type="email" name="email" id="email" (focus)="onFocus($event)" (blur)="onBlur($event)" required [(ngModel)]="user.email"/>
+      </div>
+      <button type="submit" class="btn btn-block btn-info" [disabled]="!resetForm.form.valid">发送验证码</button>
+    </form>
+  </div>
+  <a routerLink="/auth/login">已有账号，前去登录！</a>
+  <a routerLink="/auth/register" class="pull-right">注 册</a>
+</div>
+

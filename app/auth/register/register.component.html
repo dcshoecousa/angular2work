@@ -1,0 +1,37 @@
+<div class="auth-card">
+  <div class="auth-main">
+    <img src="../../assets/avatar.jpg" alt="" class="img-circle">
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm" >
+      <div class="input-box">
+        <label for="username">用户名</label>
+        <input type="text" name="username" id="username" (focus)="onFocus($event)" (blur)="onBlur($event)" [(ngModel)]="user.username"/>
+      </div>
+      <div class="input-box">
+        <label for="email">邮箱</label>
+        <input type="email" name="email" id="email" (focus)="onFocus($event)" (blur)="onBlur($event)" [(ngModel)]="user.email"/>
+      </div>
+      <div class="input-box">
+        <label for="password">密码</label>
+        <input type="password" name="password" id="password" (focus)="onFocus($event)" (blur)="onBlur($event)" (input)="enter()" required [(ngModel)]="user.password"/>
+      </div>
+      <div class="input-box">
+        <label for="rePassword">重复密码</label>
+        <input type="password" name="rePassword" id="rePassword" (focus)="onFocus($event)" (blur)="onBlur($event)" (input)="enter()" required [(ngModel)]="user.rePassword"/>
+      </div>
+      <div class="input-box">
+        <label for="code">激活码</label>
+        <input type="text" name="code" id="code" (focus)="onFocus($event)" (blur)="onBlur($event)" required [(ngModel)]="user.code"/>
+      </div>
+      <div *ngFor="let alert of alerts">
+        <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" dismissible="true">{{ alert.msg }}</alert>
+      </div>
+      <button type="submit" class="btn btn-block btn-info" [disabled]="!registerForm.form.valid || flag">{{status}}</button>
+    </form>
+    <div class="register-tips">
+      注册即代表同意<a routerLink="/about" class="text-primary">服务条款</a>以及保证所录入信息的真实性，如有不实信息会导致账号被删除。
+    </div>
+  </div>
+  <a routerLink="/auth/login">已有账号，前去登录！</a>
+</div>
+
+

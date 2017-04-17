@@ -1,0 +1,21 @@
+<div class="auth-card">
+  <div class="auth-main">
+    <img src="../../assets/avatar.jpg" alt="" class="img-circle">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm" >
+      <div class="input-box">
+        <label for="email">邮箱</label>
+        <input type="email" name="email" id="email" (focus)="onFocus($event)" (blur)="onBlur($event)" required [(ngModel)]="user.email"/>
+      </div>
+      <div class="input-box">
+        <label for="password">密码</label>
+        <input type="password" name="password" id="password" (focus)="onFocus($event)" (blur)="onBlur($event)" required [(ngModel)]="user.password"/>
+      </div>
+      <div *ngFor="let alert of alerts">
+        <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" dismissible="true">{{ alert.msg }}</alert>
+      </div>
+      <button type="submit" class="btn btn-block btn-info" [disabled]="!loginForm.form.valid || flag">{{status}}</button>
+    </form>
+  </div>
+  <a routerLink="/auth/register">没有账号，前去注册！</a>
+  <a routerLink="/auth/reset" class="pull-right">忘记密码？</a>
+</div>
