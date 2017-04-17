@@ -1,0 +1,123 @@
+a{
+  text-decoration: none;
+}
+.list-out{
+  background: #f5f5f5;
+}
+.list{
+  width: 960px;
+  margin: 110px auto 40px;
+  padding: 0 15px 20px;
+}
+.list .list-right section,
+.list .list-left section{
+  background: white;
+}
+.list-top{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.list-top span{
+  color: #999;
+}
+.list-item {
+  border-bottom: 1px solid #f2f2f2;
+}
+.list-item > div{
+  margin-bottom: 15px;
+}
+.list-item.list-empty{
+  text-align: center;
+  padding: 120px;
+  color: #8590a6;
+}
+.list-item .list-user{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  padding: 15px 15px 0;
+}
+.list-item .user-header,
+.list-item .user-header img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #f5f5f5;
+}
+.list-item .user-name{
+  margin-right: 10px;
+}
+.list-item time{
+  width: 100px;
+  height: 20px;
+  background: #f5f5f5;
+}
+.list-item .list-title
+{
+  margin: 0 15px 15px;
+  height: 60px;
+  background: #f5f5f5;
+  font-size: 24px;
+}
+.list-item .list-desc{
+  height: 20px;
+  background: #f5f5f5;
+  margin: 0 15px 15px;
+  -webkit-animation: list-loading 1.2s linear infinite;
+  -o-animation: list-loading 1.2s linear infinite ;
+  animation: list-loading 1.2s linear infinite ;
+}
+@keyframes list-loading {
+  0%  {width: 30%;}
+  100% {width: calc(100% - 30px);}
+}
+.list-item .list-comment{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  padding: 0 15px;
+  color: #999999;
+}
+.list-item .comment-read{
+  width: 100px;
+  height: 15px;
+  background: #f5f5f5;
+}
+.list-item .comment-like{
+  width: 50px;
+  height: 10px;
+  background: #f5f5f5;
+}
+.list-item.result *{
+  background: white;
+}
+.list-item.result .list-title{
+  height: auto;
+}
+.list-hot .hot-top{
+  padding: 15px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.list-hot .hot-title{
+  border-bottom: 1px solid #f2f2f2;
+}
+.list-hot .hot-item{
+  padding:10px 15px;
+}
+.list-hot .hot-item span{
+  color: #999;
+  font-size: 12px;
+}
+@media (max-width: 1200px) {
+  .list{
+    width: calc(100% - 20px);
+  }
+}

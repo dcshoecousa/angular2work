@@ -1,0 +1,11 @@
+<div class="nav">
+  <p><span class="fa fa-flash text-primary"></span> 菜单</p>
+  <ul class="nav-list">
+    <li><a href="javascript:void(0)" (click)="link('home')"><span class="fa fa-home"></span> 首页</a></li>
+    <li *ngIf="!isLogin&&!isAdmin"><a href="javascript:void(0)" (click)="link('auth/login')"><span class="fa fa-send"></span> 登录</a></li>
+    <li *ngIf="!isLogin&&!isAdmin"><a href="javascript:void(0)" (click)="link('auth/register')"><span class="fa fa-user-circle"></span> 注册</a></li>
+    <li *ngIf="isAdmin"><a href="javascript:void(0)"><span class="fa fa-dashboard"></span> 后台</a></li>
+    <li><a href="javascript:void(0)" (click)="link('about')"><span class="fa fa-info-circle"></span> 关于</a></li>
+  </ul>
+</div>
+

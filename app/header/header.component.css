@@ -1,0 +1,42 @@
+.display{
+  display: block;
+}
+.header{
+  padding: 9px 15px;
+  z-index: 1000;
+  position: fixed;
+  left: 240px;
+  right: 0;
+  background: white;
+  border-bottom: 1px solid #f2f2f2;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+}
+.header-menu .nav-control{
+  color: #333333;
+  display: none;
+}
+.header-user a>img{
+  width: 32px;
+  height: 32px;
+}
+.mask{
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right:0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .header-menu .nav-control{
+    display: block;
+  }
+  .header{
+    left: 0;
+  }
+}
+

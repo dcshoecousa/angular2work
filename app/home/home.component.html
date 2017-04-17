@@ -1,0 +1,17 @@
+<div class="nav-type">
+  <div class="nav-content">
+    <ul class="clearfix">
+      <li><a href="javascript:void (0)" (click) = "queryType($event,'all')" class="active">全部</a></li>
+      <li><a href="javascript:void (0)" (click) = "queryType($event,'frontend')">前端</a></li>
+      <li><a href="javascript:void (0)" (click) = "queryType($event,'backend')">后端</a></li>
+      <li><a href="javascript:void (0)" (click) = "queryType($event,'android')">Android</a></li>
+      <li><a href="javascript:void (0)" (click) = "queryType($event,'iOS')">iOS</a></li>
+      <li><a href="javascript:void (0)" (click) = "queryType($event,'design')">设计</a></li>
+      <li><a href="javascript:void (0)" (click) = "queryType($event,'product')">产品</a></li>
+      <li><a href="javascript:void (0)" (click) = "queryType($event,'read')">阅读</a></li>
+      <li><a href="javascript:void (0)" (click) = "queryType($event,'tool')">工具</a></li>
+    </ul>
+  </div>
+</div>
+<!--<router-outlet></router-outlet>-->
+<app-list [type]="type"></app-list>

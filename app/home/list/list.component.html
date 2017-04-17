@@ -1,0 +1,100 @@
+<div class="list-out">
+  <div class="container-fluid list">
+    <div class="row">
+      <!--<p>-->
+      <!--<input [(ngModel)]="newNew.title" />-->
+      <!--<input [(ngModel)]="newNew.desc">-->
+      <!--<input [(ngModel)]="newNew.author" />-->
+      <!--<input [(ngModel)]="newNew.content">-->
+      <!--<input [(ngModel)]="newNew.read" />-->
+      <!--<input [(ngModel)]="newNew.like">-->
+      <!--<button (click)="add()">添加</button>-->
+      <!--<button (click)="deleteProduct()">删除</button>-->
+      <!--</p>-->
+      <!--<div class="common-loading" *ngIf="!loading">-->
+      <!--<ul>-->
+      <!--<li></li>-->
+      <!--<li></li>-->
+      <!--<li></li>-->
+      <!--<li></li>-->
+      <!--</ul>-->
+      <!--</div>-->
+      <div class="col-md-9 col-sm-12 list-right">
+        <section>
+          <div class="list-top">所有文章 <span>更多</span></div>
+          <ul>
+            <li class="list-item" *ngIf="!loading">
+              <div class="list-user">
+                <div class="user-header"></div>
+                <time></time>
+              </div>
+              <div class="list-desc"></div>
+              <div class="list-title"></div>
+              <div class="list-comment">
+                <div class="comment-read"></div>
+                <div class="comment-like"></div>
+              </div>
+            </li>
+            <li class="list-item list-empty" *ngIf="empty">
+              <p class="fa fa-file-o fa-4x"></p>
+              <p>空空如也 !</p>
+            </li>
+            <li class="list-item result" *ngFor="let new of list | async ">
+              <div class="list-user">
+                <div class="user-header"><img src="../../../assets/avatar.jpg" alt=""> </div>
+                <div class="user-name">{{new.author}} · </div>
+                <time>{{new.createDate | dateTransform }}</time>
+              </div>
+              <a href="javascript:void(0)" (click)="detail(new.$key)" target="_blank">
+                <div class="list-title">{{new.title}}</div>
+                <div class="list-desc">{{new.desc}}</div>
+              </a>
+              <div class="list-comment">
+                <div class="comment-read"><span class="fa fa-commenting"></span> {{new.read}}</div>
+                <div class="comment-like"><span class="fa fa-heart"></span> {{new.like}}</div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="col-md-3 hidden-sm hidden-xs list-left">
+        <section class="list-hot">
+          <div class="hot-top">TOP 10</div>
+          <ul>
+            <li class="hot-item">
+              <a href="">
+                <div>angular 2.0</div>
+                <span class="fa fa-commenting"> 1</span>
+              </a>
+            </li>
+            <li class="hot-item">
+              <a href="">
+                <div>angular 2.0</div>
+                <span class="fa fa-commenting"> 1</span>
+              </a>
+            </li>
+            <li class="hot-item">
+              <a href="">
+                <div>angular 2.0</div>
+                <span class="fa fa-commenting"> 1</span>
+              </a>
+            </li>
+            <li class="hot-item">
+              <a href="">
+                <div>angular 2.0</div>
+                <span class="fa fa-commenting"> 1</span>
+              </a>
+            </li>
+            <li class="hot-item">
+              <a href="">
+                <div>angular 2.0</div>
+                <span class="fa fa-commenting"> 1</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+

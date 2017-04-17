@@ -1,0 +1,19 @@
+<div class="header clearfix">
+  <div class="header-menu pull-left">
+    <a href="javascript:void(0)" class="nav-control" (click)="openNav()">
+      <span class="fa fa-navicon"></span>
+    </a>
+  </div>
+  <span>{{title | uppercase}}</span>
+  <div class="header-user pull-right" dropdown>
+    <a href="javascript:void(0)" id="single-button" dropdownToggle>
+      <img src="../../assets/avatar.jpg" class="img-circle" alt="" />
+    </a>
+    <ul dropdownMenu role="menu" aria-labelledby="single-button">
+      <li *ngIf="!isLogin"><a routerLink="/auth/login">登录</a></li>
+      <li *ngIf="!isLogin"><a routerLink="/auth/register">注册</a></li>
+      <li *ngIf="isLogin"><a href="javascript:void(0)" (click)="logout()">退出</a></li>
+    </ul>
+  </div>
+</div>
+<div class="mask" *ngIf="mask" (click)="closeNav()"></div>
